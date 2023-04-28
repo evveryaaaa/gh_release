@@ -26,5 +26,5 @@ jobs:
                 })
             }catch(error){
                     core.info('ever')
-                    console.log(JSON.stringify(error))
+                    console.log(JSON.stringify(error.response))
                 }

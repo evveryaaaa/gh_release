@@ -21,8 +21,8 @@ jobs:
             const response = await github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              sha: ${{ github.sha }}
-              ref: `refs/tags/${major}.${minor}.${patch}`
+              sha: ${{ github.sha }},
+              ref: `refs/tags/v${major}.${minor}.${patch}`
             })
 
             console.log(JSON.stringify(response));

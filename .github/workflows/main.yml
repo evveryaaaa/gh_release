@@ -21,7 +21,7 @@ jobs:
                 const response = await github.rest.git.createRef({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    sha: '${{ github.sha }}'',
+                    sha: '${{ github.sha }}',
                     ref: `refs/tags/v${major}.${minor}.${patch}`
                 })
             }catch(error){

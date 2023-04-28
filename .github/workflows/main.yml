@@ -9,6 +9,24 @@ jobs:
       - name: checkout
         id: checkout
         uses: actions/checkout@v3
+      - name: tag_push
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const version_type = 'major'
+            const major = '1'
+            const minor = '1'
+            const patch = '0'
+
+            const reponse = await github.rest.git.createRef({
+              owner: context.repo.owner
+              repo: context.repo.repo
+              ref: `$refs/tags/${major}.${minor}.${patch}`
+            })
+
+            console.log(JSON.stringify(response));
+
+
       - name: Release generation
         id: release_generation
         uses: softprops/action-gh-release@v0.1.15

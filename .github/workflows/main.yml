@@ -18,7 +18,7 @@ jobs:
             const minor = '1'
             const patch = '0'
 
-            const reponse = await github.rest.git.createRef({
+            const response = await github.rest.git.createRef({
               owner: context.repo.owner
               repo: context.repo.repo
               ref: `$refs/tags/${major}.${minor}.${patch}`

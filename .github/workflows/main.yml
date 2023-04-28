@@ -25,5 +25,5 @@ jobs:
                     ref: `refs/tags/v${major}.${minor}.${patch}`
                   })
             }catch(error){
-                console.log(JSON.stringify(error));
+                console.log(JSON.stringify(error))
             }

@@ -17,12 +17,13 @@ jobs:
             const major = '1'
             const minor = '1'
             const patch = '0'
-
-            const response = await github.rest.git.createRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              sha: ${{ github.sha }},
-              ref: `refs/tags/v${major}.${minor}.${patch}`
-            })
-
-            console.log(JSON.stringify(response));
+            try{
+                const response = await github.rest.git.createRef({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    sha: ${{ github.sha }},
+                    ref: `refs/tags/v${major}.${minor}.${patch}`
+                  })
+            }catch(error){
+                console.log(JSON.stringify(response));
+            }

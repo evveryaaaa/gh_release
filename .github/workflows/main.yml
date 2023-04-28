@@ -1,0 +1,11 @@
+name: idk
+on: push
+jobs:
+  ever:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release generation
+        id: release_generation
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          tag_name: v1.1.0
